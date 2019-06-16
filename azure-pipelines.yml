@@ -2,7 +2,13 @@
 # Build > Test > Pack > Push
 
 trigger:
-- master
+  branches:
+    include:
+    - master
+  paths:
+    exclude:
+    - README.md
+    - azure-pipelines.yml
 
 pool:
   vmImage: 'windows-2019'
