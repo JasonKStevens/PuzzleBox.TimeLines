@@ -27,17 +27,17 @@ steps:
   inputs:
     command: pack
     configuration: 'release'
-    packagesToPack: PuzzleBox.Timeline/PuzzleBox.Timeline.csproj
+    packagesToPack: PuzzleBox.Timelines/PuzzleBox.Timelines.csproj
     versioningScheme: byPrereleaseNumber
     majorVersion: '$(Major)'
     minorVersion: '$(Minor)'
     patchVersion: '$(Patch)'
 
 # Push
-#- task: NuGetCommand@2
-#  displayName: 'Push'
-#  inputs:
-#    command: push
-#    nuGetFeedType: external
-#    publishFeedCredentials: 'PuzzleBox.Timeline'
-#    packagesToPack: PuzzleBox.Timeline/PuzzleBox.Timeline.csproj
+- task: NuGetCommand@2
+  displayName: 'Push'
+  inputs:
+    command: push
+    nuGetFeedType: external
+    publishFeedCredentials: 'PuzzleBox.Timelines'
+    packagesToPack: PuzzleBox.Timelines/PuzzleBox.Timelines.csproj
