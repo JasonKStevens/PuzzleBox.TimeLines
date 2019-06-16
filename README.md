@@ -8,7 +8,7 @@ _This library is in alpha._
 
 I was inspired to write this library after trying to use [Time Period Library for .Net](https://www.codeproject.com/Articles/168662/Time-Period-Library-for-NET). It's a very good library and a well written article but unfortunatelly, for my purposes, I couldn't make use of it.
 
-I wanted a library that I could use to perform arbitrary, timezone aware timeline arithmetic. Where you could, for example, find out how many craft-hours (453 electrician hours, 342 plumber hours, etc) you have available over a certain period; and do this by adding up all the timelines of individuals which are in turn added up by the timelines of their work pattern, leave, etc.
+In a blue-sky world I wanted a library I could use to perform timezone-aware, timeline arithmetic with varying kinds of time. For example in planning, how many person-hours are available for a particular craft, and if those hours were assigned how many were left for another craft. And do this by combining the timelines of individuals in the workforce, which were in turn built up by timelines of their work pattern, leave, etc.
 
 ## Timeline Operations
 
