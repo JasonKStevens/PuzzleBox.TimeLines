@@ -6,7 +6,9 @@ _This library is in alpha._
 
 **PuzzleBox.Timelines** is .Net library for timeline arithmetic.
 
-I wrote this library quite some time ago and I'm resurrecting it at the moment. There are a few things that need ironing out and improving, but it's not in a bad state.
+I was inspired to write this library after trying to use [Time Period Library for .Net](https://www.codeproject.com/Articles/168662/Time-Period-Library-for-NET). It's a very good library and a well written article but unfortunatelly, for my purposes, I couldn't make use of it.
+
+I wanted a library that I could use to perform arbitrary, timezone aware timeline arithmetic. Where you could, for example, find out how many craft-hours (453 electrician hours, 342 plumber hours, etc) you have available over a certain period; and do this by adding up all the timelines of individuals which are in turn added up by the timelines of their work pattern, leave, etc.
 
 ## Timeline Operations
 
