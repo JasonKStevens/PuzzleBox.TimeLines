@@ -1,6 +1,6 @@
 # PuzzleBox.Timelines
 
-[![Build Status](https://dev.azure.com/jasonkstevens/PuzzleBox.Timeline/_apis/build/status/JasonKStevens.PuzzleBox.Timelines?branchName=master)](https://dev.azure.com/jasonkstevens/PuzzleBox.Timeline/_build/latest?definitionId=2&branchName=master)
+[![Build Status](https://dev.azure.com/jasonkstevens/PuzzleBox/_apis/build/status/PuzzleBox.Timelines?branchName=master)](https://dev.azure.com/jasonkstevens/PuzzleBox/_build/latest?definitionId=5&branchName=master)
 
 _This library is in alpha._
 
