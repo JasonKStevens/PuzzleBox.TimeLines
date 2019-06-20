@@ -71,15 +71,14 @@ namespace PuzzleBox.Time.Tests
     [Test]
     public void Add_OverlappingStart()
     {
-      var timeline1 = new TimelinePayload<StringPayload>(new LocalInterval(new LocalDateTime(2008, 1, 4, 0, 0), new LocalDateTime(2008, 1, 8, 0, 0)).AddPayload(new StringPayload("Craft")));
-      var timeline2 = new TimelinePayload<StringPayload>(new LocalInterval(new LocalDateTime(2008, 1, 1, 0, 0), new LocalDateTime(2008, 1, 5, 0, 0)).AddPayload(new StringPayload("Craft")));
+      var timeline1 = new TimelinePayload<StringPayload>(new LocalInterval(new LocalDateTime(2008, 1, 4, 0, 0), new LocalDateTime(2008, 1, 8, 0, 0)).AddPayload(new StringPayload("A")));
+      var timeline2 = new TimelinePayload<StringPayload>(new LocalInterval(new LocalDateTime(2008, 1, 1, 0, 0), new LocalDateTime(2008, 1, 5, 0, 0)).AddPayload(new StringPayload("B")));
 
       var actual = (timeline1 + timeline2).GetIntervals();
       var expected = new TimelineMask(TimeZones.Local, new []
       {
-        new LocalInterval(new LocalDateTime(2008, 1, 1, 0, 0), new LocalDateTime(2008, 1, 4, 0, 0)).AddPayload(new StringPayload("Craft")),
-        new LocalInterval(new LocalDateTime(2008, 1, 4, 0, 0), new LocalDateTime(2008, 1, 5, 0, 0)).AddPayload(new StringPayload("Craft")),
-        new LocalInterval(new LocalDateTime(2008, 1, 5, 0, 0), new LocalDateTime(2008, 1, 8, 0, 0)).AddPayload(new StringPayload("Craft")),
+        new LocalInterval(new LocalDateTime(2008, 1, 1, 0, 0), new LocalDateTime(2008, 1, 4, 0, 0)).AddPayload(new StringPayload("B")),
+        new LocalInterval(new LocalDateTime(2008, 1, 4, 0, 0), new LocalDateTime(2008, 1, 8, 0, 0)).AddPayload(new StringPayload("A")),
       }).GetIntervals();
 
       Assert.That(TimeMath.Equals(expected, actual), Is.True);
@@ -88,14 +87,14 @@ namespace PuzzleBox.Time.Tests
     [Test]
     public void Add_Starting()
     {
-      var timeline1 = new TimelinePayload<StringPayload>(new LocalInterval(new LocalDateTime(2008, 1, 4, 0, 0), new LocalDateTime(2008, 1, 8, 0, 0)).AddPayload(new StringPayload("Craft")));
-      var timeline2 = new TimelinePayload<StringPayload>(new LocalInterval(new LocalDateTime(2008, 1, 4, 0, 0), new LocalDateTime(2008, 1, 6, 0, 0)).AddPayload(new StringPayload("Craft")));
+      var timeline1 = new TimelinePayload<StringPayload>(new LocalInterval(new LocalDateTime(2008, 1, 4, 0, 0), new LocalDateTime(2008, 1, 8, 0, 0)).AddPayload(new StringPayload("A")));
+      var timeline2 = new TimelinePayload<StringPayload>(new LocalInterval(new LocalDateTime(2008, 1, 4, 0, 0), new LocalDateTime(2008, 1, 6, 0, 0)).AddPayload(new StringPayload("B")));
 
       var actual = (timeline1 + timeline2).GetIntervals();
       var expected = new TimelineMask(TimeZones.Local, new []
       {
-        new LocalInterval(new LocalDateTime(2008, 1, 4, 0, 0), new LocalDateTime(2008, 1, 6, 0, 0)).AddPayload(new StringPayload("Craft")),
-        new LocalInterval(new LocalDateTime(2008, 1, 6, 0, 0), new LocalDateTime(2008, 1, 8, 0, 0)).AddPayload(new StringPayload("Craft")),
+        new LocalInterval(new LocalDateTime(2008, 1, 4, 0, 0), new LocalDateTime(2008, 1, 6, 0, 0)).AddPayload(new StringPayload("B")),
+        new LocalInterval(new LocalDateTime(2008, 1, 6, 0, 0), new LocalDateTime(2008, 1, 8, 0, 0)).AddPayload(new StringPayload("A")),
       }).GetIntervals();
 
       Assert.That(TimeMath.Equals(expected, actual), Is.True);
