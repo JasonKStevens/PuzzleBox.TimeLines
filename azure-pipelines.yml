@@ -26,7 +26,7 @@ steps:
   displayName: 'Build'
 
 # Test
-- script: dotnet test --no-build
+- script: dotnet test -c $(buildConfiguration) --no-build
   displayName: 'Test'
 
 # Pack
