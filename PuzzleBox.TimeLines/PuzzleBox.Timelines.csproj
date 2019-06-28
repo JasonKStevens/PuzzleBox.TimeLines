@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EnricoApi" Version="1.0.1" />
     <PackageReference Include="NodaTime" Version="2.4.5" />
   </ItemGroup>
 

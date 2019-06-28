@@ -2,7 +2,7 @@
 
 [![Build Status](https://dev.azure.com/jasonkstevens/PuzzleBox/_apis/build/status/PuzzleBox.Timelines?branchName=master)](https://dev.azure.com/jasonkstevens/PuzzleBox/_build/latest?definitionId=5&branchName=master)
 
-_This library is in alpha._
+_This library is in beta._
 
 **PuzzleBox.Timelines** is [.Net library](https://www.nuget.org/packages/PuzzleBox.Timelines/) for timeline arithmetic.
 
@@ -16,11 +16,20 @@ This library can perform timezone-aware, timeline arithmetic with varying kinds 
 
 Consider two timelines A & B that overlap. The results of various and (&), or (|) and not (~) operations applied are shown below.
 
-![Timeline operations](https://lh3.googleusercontent.com/ipogJJce_SQEJbACaUwSQEwpJ_tMW7ehA-9q4le5ICaagI2Mc6pVJFjoKOCa9QUxjvPTg_EOHhPslkfbDjGN8BzLflDLFusaYcHzCR0aJ4Ku4DysnfMzusn5YBQA3TpFjDIy70nGTX41cd0qRxe_pYXO0TTLGQgzDfcIIVavEu6U006pdhLin3DzngiYYqTpiOTzjGMT5L7e4H-4jDylRe-1Z0ql0hdanxCTyOtmonVvguWWBHeiLD6gCXHRcliNf9MZSOWaFBBcsGABhiDe8lMpc8YcDxe6RQejaXxzNCFpablGmAAsVMjpL73kXHGFb-1YVq7XTvh3s1CbUTLLxQrrooy2-gZAkVtBeBUCsPs_mNyfN9Oaldli0lfldyqHkS2FJVRxo0nGfdtfo8j89mNiV2qV6ScoIea1hzX_pHgRvu5n6EZI-ihZEQkUrmkpHtQDMj_kpDkR0FSCS0rrB4OHJa5EWOyBizG2rEnlV4olQ_ATGBttThm6jE74suTOVtPUMO33hk-oAHwdwbGs6ybKqkdE4z5oViS4wBJacenvbFTaA2oVMUfd1wjpG8NAXZit7nQJlEsWCDpVh-Qh9mUxugA8mb0jQZMw6ZJZoeqPv1jPaWQmjLYFNw5x0PN1UX9_Mzf5Vf4jPXWRY1vutf916UJxEkj2=w551-h417-no)
+![Timeline operations](https://lh3.googleusercontent.com/KUtZlWXmliWidqRNAXxaIDvknOqmSpuGWLVn4PINfs-bXpXPwkZkcmORSQPAQ3RwH7SUjkoqP83FFfJ5M7Gjel58CjKbJJxB9YR9n3yhMNZz_EQiqv5BeOlc7TOEaz7ZvLHxznJiUyGhzvGGg_CW0ng69K7u3a7kwwfWOzHcSkuyJ_5fiZWt51GQPyRE0YoXisXsdpBH-2BqdwbthGGzOqZEaIuyNXHzpoJOiuQO3nWxktRWh_4C5SrmvLwfsUZqSXAlFOPtFmMPjdMalgUiydwNN7sx1Pr4SNKzIaZ7gME4vkLDCc429e-S07VUXKM0UKfrPHA563l1VXf_P6fqh0J0U4xFk9ak3RUa_H3cav0PRdk1yRcWgjrd4eVHusnEHWGBT6uNxo1gdF-ZqtL0ftY-wQQhOeiuulbsNwW5QF0FNSf9AI8ZgATEsEdlvxlmZlnnAEFEBmfyR2ZNeMpZ24o53Dbcbr854ZR5vYg9k8FORrSm1xrTeI6VWFYVdEE7lORFPVJ87Q1Xeek6RUR1f1ukz3ooANDu8fke2pdUPtGPiyVnGA3uQjFQEm6fRkfl1hqPP4lnl_vEPfAGWmLqU6ob7zyiB0fexjuZPwX3Eammb1fQJH36GP51q0D5mHZ3-ks1de3ugDy0peSsxgB0ZkKq4v0OcXAo=w406-h308-no)
 
 More complex operations can be performed.  For example, to work out the timeline when an employee was on the clock, take their employment period with respect to with their work pattern, remove holidays and leave, then finally add overtime.
 
 ```c#
+var employmentPeriod = TimeBuilder
+    .From(2004, 11, 1)
+    .Timeline;
+
+var workPattern = Pattern.Shift_24_48;
+var publicHolidays = new Holidays("NZL", "Auckland");
+var leave = LoadLeave();
+var overtime = LoadOvertime();
+
 var worked = employmentPeriod
     & workPattern
     & ~publicHolidays
@@ -30,7 +39,7 @@ var worked = employmentPeriod
 
 This can be pictured as follows:
 
-![Time worked](https://lh3.googleusercontent.com/rpQiLFgTrC9AkVONilJRoD7tomJUXldduXm8geGxl0Kh7ZRr589BeDggC3ERSZ89USMD1gMvj82zvXbxvvdykE4SuiGcWzprSYBW24EM0R0XigC4G2vps3L5Ny-cu_15ni_d5JDub8ueTaSMiHsLuHFMHc0SAm7TBYISRcqR0jI0OGkVlFLZCEIlJEdZVYGMUI8NgmC0obkBcacxFJfPwLDZuaMPyjVb7OkGUrTnwxbbQSNx8nJuVmq65Jm_wvBgVCU37kJm2EgSHxfJb6bzF61qfx87MlcG0HQCmjOASaoGgXY5iAzRgNp3uIulj8u0gMLuWvRILvD6AKkWeCtvPApcjVPobkGlhxdzSi1_95mh3zdTXLSJhJZi2taWgwMESKLhkKnFTMij7Xxk6ccDtax-7SEVdwd9f1BmK0PCz7n2XUEFecDGpfPtXHTcMSIBPQDkskF1iK4XV9smK7uWzDTFNeEj1g-Qz_iKKQpKJa5UQkx9k1cmq_W8OhVWc9OOCyatCW7gBoIAdtRB47ml0dwTppaJutYMTgtqs20kb99O0mUDxT8hyA8T4kdIysxAL7LBMf7t7VjSkZDkwU7KQG456s0uGctdTwpI0DdiI_feXgj3hhwpPsSqlz5joj85hTKxGqwc-Aiq_cyAVrCL7zGO4qdchVlx=w784-h286-no)
+![Time worked](https://lh3.googleusercontent.com/HlfgHpfMD1nwOOvSDD4ocIDfULmjnrqYTPPsre1SgQ1cYfkgofXGSfY6GHXQgt2nF07ML2EVNrX9P8Ob1Wx01K4A4rlC_ZRaSmZtjXf6ikrR4xPAKm7fxxOhk5DmB9esw9HU2GzJBQC4n7BAAE1aeMEO0qHKGdFZuJo2xgOaBQr3qgTNrYKEzJO_o2mkV1SRvrRWt6EWI7XXa6PyOjp9nG2f14gzWV8pkzDCQ5PU2biWEIzpeCMXDuewCUXmubUyndWwFhptrieEhUoreczIkWW1hhSWrwn6TiU2Sj8HXZwEhdjjq_AgPsY8NYeI3P4o7hVGjgEnDh_ZwjbcqQswhdKJf3Tjj603poHx-xlxNGEicerx-H1rEW_fnmELFCAxctXazoYBTsGPsRKV62j4UjlTJdfCLDFD8MNC6GRRPoGAdzz44blY4PMKKqV_O9nKwc-CUhSmafH-Iv117I2go3Vs93atq73YjZNalf991TOCJvcoiM_iA8xlU2b_mNTS7a00Igdwj8OwOyeywEJmA5SeKP9SquiEFOq5dR8dG7HQjzuMZSQ1-WmJCKOPjSE9vnYmFE4yOdKnVOhLPL5S9p0jo5sWnk3dD9zIKy4hxZU-367VqozawAq-udKu22dNYQc0YjkGVehBc8MV1_uFpjDSzvfzPUkN=w575-h205-no)
 
 Another example is to work out the possible meeting times of several people who may be in different timezones.
 ... To write up.

@@ -2,18 +2,18 @@ using System.Collections.Generic;
 
 namespace PuzzleBox.Time.Timelines
 {
-  public class OverlappingIntervals<T> : List<LocalInterval>
-  {
-    public OverlappingIntervals() {}
-
-    public OverlappingIntervals(LocalInterval interval)
+    public class OverlappingIntervals<T> : List<LocalInterval>
     {
-      Add(interval);
-    }
+        public OverlappingIntervals() { }
 
-    public OverlappingIntervals(IEnumerable<LocalInterval> intervals)
-    {
-      AddRange(intervals);
+        public OverlappingIntervals(LocalInterval interval)
+        {
+            Add(interval);
+        }
+
+        public OverlappingIntervals(IEnumerable<LocalInterval> intervals)
+        {
+            AddRange(intervals);
+        }
     }
-  }
 }
