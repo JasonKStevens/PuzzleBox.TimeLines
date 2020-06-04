@@ -16,7 +16,7 @@ This library can perform timezone-aware, timeline arithmetic with varying kinds 
 
 Consider two timelines A & B that overlap. The results of various and (&), or (|) and not (~) operations applied are shown below.
 
-![Timeline operations](https://lh3.googleusercontent.com/KUtZlWXmliWidqRNAXxaIDvknOqmSpuGWLVn4PINfs-bXpXPwkZkcmORSQPAQ3RwH7SUjkoqP83FFfJ5M7Gjel58CjKbJJxB9YR9n3yhMNZz_EQiqv5BeOlc7TOEaz7ZvLHxznJiUyGhzvGGg_CW0ng69K7u3a7kwwfWOzHcSkuyJ_5fiZWt51GQPyRE0YoXisXsdpBH-2BqdwbthGGzOqZEaIuyNXHzpoJOiuQO3nWxktRWh_4C5SrmvLwfsUZqSXAlFOPtFmMPjdMalgUiydwNN7sx1Pr4SNKzIaZ7gME4vkLDCc429e-S07VUXKM0UKfrPHA563l1VXf_P6fqh0J0U4xFk9ak3RUa_H3cav0PRdk1yRcWgjrd4eVHusnEHWGBT6uNxo1gdF-ZqtL0ftY-wQQhOeiuulbsNwW5QF0FNSf9AI8ZgATEsEdlvxlmZlnnAEFEBmfyR2ZNeMpZ24o53Dbcbr854ZR5vYg9k8FORrSm1xrTeI6VWFYVdEE7lORFPVJ87Q1Xeek6RUR1f1ukz3ooANDu8fke2pdUPtGPiyVnGA3uQjFQEm6fRkfl1hqPP4lnl_vEPfAGWmLqU6ob7zyiB0fexjuZPwX3Eammb1fQJH36GP51q0D5mHZ3-ks1de3ugDy0peSsxgB0ZkKq4v0OcXAo=w406-h308-no)
+![Timeline operations](https://photos.google.com/share/AF1QipPCokRoqQviiSyae-8lkfgdYK2hLr_QLgwkHcNHCmmL1F5S8KYSLBBu8_dCoOP1hg/photo/AF1QipPaJd9gqWZKnz_X3QNQrE8m1oev0DF4svhZTUny?key=ME8wSXc1a1g1OVFFOTNLZHBJRVhGaEJGOFlSY0dR)
 
 More complex operations can be performed.  For example, to work out the timeline when an employee was on the clock, take their employment period with respect to with their work pattern, remove holidays and leave, then finally add overtime.
 
@@ -39,7 +39,7 @@ var worked = employmentPeriod
 
 This can be pictured as follows:
 
-![Time worked](https://lh3.googleusercontent.com/HlfgHpfMD1nwOOvSDD4ocIDfULmjnrqYTPPsre1SgQ1cYfkgofXGSfY6GHXQgt2nF07ML2EVNrX9P8Ob1Wx01K4A4rlC_ZRaSmZtjXf6ikrR4xPAKm7fxxOhk5DmB9esw9HU2GzJBQC4n7BAAE1aeMEO0qHKGdFZuJo2xgOaBQr3qgTNrYKEzJO_o2mkV1SRvrRWt6EWI7XXa6PyOjp9nG2f14gzWV8pkzDCQ5PU2biWEIzpeCMXDuewCUXmubUyndWwFhptrieEhUoreczIkWW1hhSWrwn6TiU2Sj8HXZwEhdjjq_AgPsY8NYeI3P4o7hVGjgEnDh_ZwjbcqQswhdKJf3Tjj603poHx-xlxNGEicerx-H1rEW_fnmELFCAxctXazoYBTsGPsRKV62j4UjlTJdfCLDFD8MNC6GRRPoGAdzz44blY4PMKKqV_O9nKwc-CUhSmafH-Iv117I2go3Vs93atq73YjZNalf991TOCJvcoiM_iA8xlU2b_mNTS7a00Igdwj8OwOyeywEJmA5SeKP9SquiEFOq5dR8dG7HQjzuMZSQ1-WmJCKOPjSE9vnYmFE4yOdKnVOhLPL5S9p0jo5sWnk3dD9zIKy4hxZU-367VqozawAq-udKu22dNYQc0YjkGVehBc8MV1_uFpjDSzvfzPUkN=w575-h205-no)
+![Time worked](https://photos.google.com/share/AF1QipM26brdLIQLJXbvMlb5h5BACcaSQe9UNSKbUJvoonUZVf7etU8BWmwbMnOeTDpofA/photo/AF1QipNsw8i7PbkwVheHnDeEmS6jWL-ovPNt6XPuzesE?key=ZW1sNEl1TVRyeGtmMFFaX0w0aWRLalhOMWR3clFn)
 
 Another example is to work out the possible meeting times of several people who may be in different timezones.
 ... To write up.
